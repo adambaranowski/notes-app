@@ -7,6 +7,7 @@ Technologies:
  - JPA (Hibernate)
  - MySQL Database
  ## Features
+
  **CREATE NOTE**
  Suppose the application runs at localhost.
  To create note send HTTP POST Request to:
@@ -14,20 +15,20 @@ http://localhost:8080/notes
 
 Request should have the following JSON Body:
 
-{
-	"title":  "example title",
-	"content":  "example content"
-}
+    {
+    	"title":  "example title",
+    	"content":  "example content"
+    }
 
 The title and the content must not be empty! Otherwise, server responses with _HTTP Status_ Code 422( Unprocessable Entity).
 
 If the Note is succesfully created server responses with HTTP Status Code 201 (Created) and JSON with newly created Note id:
 
-{
-	"id": 1,
-	"title":  "example title",
-	"content":  "example content"
-}
+    {
+    	"id": 1,
+    	"title":  "example title",
+    	"content":  "example content"
+    }
 
 If you tried to create Note that exist in application (Note with existing title) server would response with HTTP Status Code 409 (Conflict).
 
@@ -41,13 +42,13 @@ http://localhost:8080/notes/title?title=exampletitle with title of note as param
 
 Server would response with HTTP Status Code 200 and the following JSON:
 
-{
-"id":  1,
-"title":  "note title",
-"content":  "note content",
-"created":  "2020-10-04T19:18:08",
-"modified":  "2020-10-04T19:18:08"
-}
+    {
+    "id":  1,
+    "title":  "note title",
+    "content":  "note content",
+    "created":  "2020-10-04T19:18:08",
+    "modified":  "2020-10-04T19:18:08"
+    }
 
 Created is the timestamp of saving the first note version.
 Modified is the timestamp of saving the most recent note version.
@@ -66,10 +67,10 @@ http://localhost:8080/notes
 
 containing JSON with title of updating note and new content: 
 
-{
-	"title":  "title of note which you want update",
-	"content":  "new note content"
-}
+    {
+    	"title":  "title of note which you want update",
+    	"content":  "new note content"
+    }
 
 Title and content must not be empty, and if the note you want to update does not exist server responses with HTTP Status Code 204 (No Content)
 If given note is succesfully updated server responses with Status Code 200 (OK).
@@ -154,3 +155,6 @@ Project has documentation in JavaDocs. You can generate it as html page by typin
 mvn javadoc:javadoc
 
 Then open notes-app/target/site/apidocs/index.html
+
+
+
